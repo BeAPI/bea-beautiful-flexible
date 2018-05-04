@@ -37,13 +37,13 @@ Finally, you could filter all images like this :
 
 - Download and install using the built-in WordPress plugin installer.
 - Site activate in the "Plugins" area of the admin.
-- Then [add](#how) your awesome layouts images.
+- Then [add](#how-) your awesome layouts images.
 
 ## [Composer](http://composer.rarst.net/)
 
 - Add repository source : `{ "type": "vcs", "url": "https://github.com/BeAPI/bea-media-analytics" }`.
 - Include `"bea/bea-media-analytics": "dev-master"` in your composer file for last master's commits or a tag released.
-- Then [add](#how) your awesome layouts images.
+- Then [add](#how-) your awesome layouts images.
 
 ## Contributing
 
