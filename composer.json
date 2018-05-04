@@ -1,0 +1,22 @@
+{
+	"name":"bea/bea-beautiful-flexible",
+	"description":"Transform ACF's flexible layouts list into a nice and UX popup.",
+	"keywords":[
+		"ACF",
+		"Flexible"
+	],
+	"homepage":"https://github.com/BeAPI/bea-beautiful-flexible",
+	"authors":[
+		{
+			"name":"Be API",
+			"email":"technique@beapi.fr",
+			"homepage":"https://beapi.fr/"
+		}
+	],
+	"type":"wordpress-plugin",
+	"minimum-stability":"stable",
+	"license":"GPL-3.0+",
+	"require":{
+		"php":">=5.6.0"
+	}
+}
