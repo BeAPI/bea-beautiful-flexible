@@ -1,0 +1,136 @@
+.acf-fc-popup {
+    width: 80%;
+    max-width: 1200px;
+    height: 80%;
+    max-height: 1200px;
+    top: 50% !important;
+    left: 50% !important;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    position: fixed !important;
+    background: none !important;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.acf-fc-popup * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.acf-fc-popup::before,
+.acf-fc-popup::after {
+    border-color: transparent !important;
+}
+
+.acf-fc-popup:before {
+    top: -100% !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: -100% !important;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    height: 200vh;
+    width: 200vw;
+    margin: 0 !important;
+    padding: 0;
+    content: "";
+}
+
+.acf-fc-popup ul {
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    background: #f4f4f4;
+    border: #ccc;
+    padding: 15px;
+    position: relative;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    padding-top: 93px !important;
+}
+
+.acf-fc-popup ul:before {
+    position: absolute;
+    top: 31px;
+    content: "Ajouter une strate";
+    font-size: 23px;
+    font-weight: 400;
+    color: #333;
+    left: 30px;
+}
+
+.acf-fc-popup ul:after {
+    position: absolute;
+    top: 62px;
+    content: "Cliquez sur une strate pour l\'ajouter au contenu de la page.";
+    font-size: 13px;
+    color: #666;
+    left: 30px;
+    font-style: italic;
+}
+
+.acf-fc-popup ul li {
+    width: 33.33333%;
+    padding: 1%;
+    float: left;
+}
+
+@media only screen and (max-width: 960px) {
+    .acf-fc-popup ul li {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 782px) {
+    .acf-fc-popup {
+        width: 95%;
+        height: 88%;
+    }
+
+    .acf-fc-popup ul li {
+        width: 100%;
+    }
+}
+
+.acf-fc-popup ul li a {
+    background-repeat: round;
+    width: 100%;
+    height: 150px;
+    border: 1px solid #ddd;
+}
+
+.acf-fc-popup ul li a i {
+    font-size: 22px;
+    vertical-align: text-top;
+    margin-right: 10px;
+}
+
+.acf-fc-popup a {
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 12px;
+}
+
+.acf-fc-popup a:hover {
+    background-repeat: round;
+    box-shadow: 3px 3px 2px 1px rgba(87, 87, 88, 0.1);
+}
+
+.acf-fc-popup div + .acf-fc-popup a:hover {
+    color: #eee;
+}
+
+.acf-fc-popup div {
+    background-color: white;
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: black;
+    font-size: 13px;
+    text-transform: uppercase;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+}
