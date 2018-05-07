@@ -12,32 +12,89 @@ class Main {
 		add_action( 'acf/input/admin_footer', [ $this, 'admin_enqueue_styles' ] );
 
 		// Images
-		add_action( 'acf/input/admin_footer', [ $this, 'layouts_images' ], 20 );
+		add_action( 'acf/input/admin_footer', [ $this, 'layouts_images_style' ], 20 );
+
+		add_action( 'acf/input/admin_head', [ $this, 'retrieve_flexible_keys' ], 1 );
 	}
 
-	public function layouts_images() {
+	/**
+	 * Display the flexible layouts images related css for backgrounds
+	 *
+	 * @author Maxime CULEA
+	 * @since  0.0.1
+	 */
+	public function layouts_images_style() {
 		$images = $this->get_layouts_images();
 		if ( empty( $images ) ) {
 			return;
 		}
 
-		$css = '/** BEA - Beautiful Flexible : dynamic images */';
+		$css = "\n<style>";
+		$css .= "\n\t /** BEA - Beautiful Flexible : dynamic images */";
 		foreach ( $images as $layout_key => $image_url ) {
-			$css .= sprintf( "\n.acf-fc-popup ul li a[data-layout=%s]{ background-image: url(%s);", $layout_key, $image_url );
+			$css .= sprintf( "\n\t .acf-fc-popup ul li a[data-layout=%s]{ background-image: url(%s); }", $layout_key, $image_url );
 		}
+		$css .= "\n</style>\n";
 
 		echo $css;
 	}
 
-	private function get_layouts_images() {
-		$layouts_images = [];
+	/**
+	 * Manage to get ACF Flexible keys
+	 *
+	 * @author Maxime CULEA
+	 * @since  0.0.1
+	 *
+	 * TODO : maybe add cache
+	 *
+	 * @return array
+	 */
+	public function retrieve_flexible_keys() {
+		$keys   = [];
+		$groups = acf_get_field_groups();
+		if ( empty( $groups ) ) {
+			return $keys;
+		}
 
-		// get flexible
+		foreach ( $groups as $group ) {
+			$fields = (array) acf_get_fields( $group );
+			if ( empty( $fields ) ) {
+				continue;
+			}
 
-		// foreach flexible, get keys
+			foreach ( $fields as $field ) {
+				if ( 'flexible_content' === $field['type'] ) {
+					// Flexible is recursive structure with sub_fields into layouts
+					foreach ( $field['layouts'] as $layout_field ) {
+						if ( $keys [ $layout_field ] ) {
+							continue;
+						}
+						$keys[ $layout_field['key'] ] = $layout_field['name'];
+					}
+				}
+			}
+		}
 
+		return $keys;
+	}
 
-		// generate keys => url (filtred)
+	/**
+	 * Get for all flexible the associated images
+	 *
+	 * @author Maxime CULEA
+	 * @since  0.0.1
+	 *
+	 * @return mixed
+	 */
+	public function get_layouts_images() {
+		$flexibles = $this->retrieve_flexible_keys();
+		if ( empty( $flexibles ) ) {
+			return [];
+		}
+
+		foreach ( $flexibles as $flexible ) {
+			$layouts_images[ $flexible ] = $this->locate_image( $flexible );
+		}
 
 		/**
 		 * Allow to add/remove/change a flexible layout key
@@ -59,7 +116,7 @@ class Main {
 	 *
 	 * @return bool|string
 	 */
-	private function locate_image( $tpl ) {
+	public function locate_image( $tpl ) {
 		if ( empty( $tpl ) ) {
 			return false;
 		}
@@ -76,6 +133,9 @@ class Main {
 		 */
 		$path = apply_filters( 'bea.beautiful_flexible.images_path', 'assets/bea-beautiful-flexible' );
 
+		// Rework the tpl
+		$tpl = str_replace( '_', '-', $tpl );
+
 		if ( is_file( sprintf( '%s/%s.png', $path, $tpl ) ) ) {
 			return sprintf( '%s/%s.png', $path, $tpl );
 		}
@@ -88,23 +148,23 @@ class Main {
 			return sprintf( '%s/%s/%s.png', get_template_directory_uri(), $path, $tpl );
 		}
 
-		return sprintf( '%s/assets/default.png', BEA_BEAUTIFUL_FLEXIBLE_URL );
+		return sprintf( '%sassets/default.png', BEA_BEAUTIFUL_FLEXIBLE_URL );
 	}
 
-	private function admin_register_assets() {
+	public function admin_register_assets() {
 		wp_register_script( 'bea-beautiful-flexible', BEA_BEAUTIFUL_FLEXIBLE_URL . 'assets/js/bea-beautiful-flexible.min.js', [ 'jquery' ], BEA_BEAUTIFUL_FLEXIBLE_VERSION );
 		wp_register_style( 'bea-beautiful-flexible', BEA_BEAUTIFUL_FLEXIBLE_URL . 'assets/css/bea-beautiful-flexible.min.css', [], BEA_BEAUTIFUL_FLEXIBLE_VERSION );
 	}
 
-	private function admin_enqueue_scripts() {
+	public function admin_enqueue_scripts() {
 		wp_enqueue_script( 'bea-beautiful-flexible' );
 	}
 
-	private function admin_enqueue_styles() {
+	public function admin_enqueue_styles() {
 		wp_enqueue_style( 'bea-beautiful-flexible' );
 	}
 
-	private function init_translations() {
+	public function init_translations() {
 		load_plugin_textdomain( 'bea-beautiful-flexible', false, BEA_BEAUTIFUL_FLEXIBLE_PLUGIN_DIRNAME . '/languages' );
 	}
 }
