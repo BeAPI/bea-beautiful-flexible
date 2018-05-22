@@ -7,9 +7,8 @@ class Main {
 		add_action( 'init', [ $this, 'init_translations' ] );
 
 		// Assets
-		add_action( 'acf/input/admin_head', [ $this, 'admin_register_assets' ] );
-		add_action( 'acf/input/admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
-		add_action( 'acf/input/admin_footer', [ $this, 'admin_enqueue_styles' ] );
+		add_action( 'acf/input/admin_footer', [ $this, 'register_assets' ], 1 );
+		add_action( 'acf/input/admin_footer', [ $this, 'enqueue_assets' ] );
 
 		// Images
 		add_action( 'acf/input/admin_footer', [ $this, 'layouts_images_style' ], 20 );
@@ -151,16 +150,13 @@ class Main {
 		return sprintf( '%sassets/default.png', BEA_BEAUTIFUL_FLEXIBLE_URL );
 	}
 
-	public function admin_register_assets() {
+	public function register_assets() {
 		wp_register_script( 'bea-beautiful-flexible', BEA_BEAUTIFUL_FLEXIBLE_URL . 'assets/js/bea-beautiful-flexible.min.js', [ 'jquery' ], BEA_BEAUTIFUL_FLEXIBLE_VERSION );
 		wp_register_style( 'bea-beautiful-flexible', BEA_BEAUTIFUL_FLEXIBLE_URL . 'assets/css/bea-beautiful-flexible.min.css', [], BEA_BEAUTIFUL_FLEXIBLE_VERSION );
 	}
 
-	public function admin_enqueue_scripts() {
+	public function enqueue_assets() {
 		wp_enqueue_script( 'bea-beautiful-flexible' );
-	}
-
-	public function admin_enqueue_styles() {
 		wp_enqueue_style( 'bea-beautiful-flexible' );
 	}
 
