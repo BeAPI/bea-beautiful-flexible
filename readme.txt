@@ -54,12 +54,14 @@ To facilitate the process of submitting an issue and quicker answer, we only use
 
 This plugin works only if the [ACF Pro](https://www.advancedcustomfields.com/) plugin is installed and activated.
 
-= Requirements =
+# Requirements
+
 - WordPress 4.6+
 - Tested up to 4.9.3.
 - PHP 5.6+
 
-= WordPress =
+# WordPress
+
 - Download and install using the built-in WordPress plugin installer.
 - Site activate in the "Plugins" area of the admin.
 - Then [add](#details) your awesome layouts images.
