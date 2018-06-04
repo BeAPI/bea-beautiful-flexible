@@ -1,5 +1,8 @@
 # Changelog ##
 
+## 1.0.2 - Future
+* [#7](https://github.com/BeAPI/bea-beautiful-flexible/issues/7)  Add support for nested repeaters with flexibles
+
 ## 1.0.1 - 22 May 2018
 * [#6](https://github.com/BeAPI/bea-beautiful-flexible/issues/6) : fix title display
 
