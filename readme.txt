@@ -38,6 +38,12 @@ Finally, you could filter all images like this :
 
 ## Who ?
 
+### Credits
+
+Special thanks to HWK, from his blogpost, we created a WordPress plugin with custom tuning (js+css).
+
+### Creator
+
 Created by [Be API](https://beapi.fr), the French WordPress leader agency since 2009. Based in Paris, we are more than 30 people and always [hiring](https://beapi.workable.com) some fun and talented guys. So we will be pleased to work with you.
 
 This plugin is only maintained, which means we do not guarantee some free support. Consider reporting an [issue](https://github.com/BeAPI/bea-media-analytics/issues) and be patient.
