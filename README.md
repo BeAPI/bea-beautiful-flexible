@@ -4,7 +4,7 @@
 
 Transform ACF's flexible layouts list into a nice and UX popup. 
 
-![Screenshot Before/After Beautiful Flexible](.wordpress.org/screenshot.png)
+![Screenshot Before/After Beautiful Flexible](.wordpress.org/screenshot-1.png)
 
 # How ?
 
