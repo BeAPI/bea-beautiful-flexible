@@ -1,0 +1,9 @@
+.distignore
+.github
+.git
+.gitignore
+CHANGELOG.md
+composer.json
+composer.lock
+LICENSE.md
+README.md
