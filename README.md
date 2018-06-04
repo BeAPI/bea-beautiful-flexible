@@ -29,7 +29,7 @@ Finally, you could filter all images like this :
 
 # Requirements
 
-- [ACF Pro](https://www.advancedcustomfields.com/)
+- [ACF Pro](https://www.advancedcustomfields.com/) plugin
 
 # Installation
 
