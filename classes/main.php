@@ -62,7 +62,24 @@ class Main {
 			}
 
 			foreach ( $fields as $field ) {
-				if ( 'flexible_content' === $field['type'] ) {
+				if ( ! in_array( $field['type'], [ 'flexible_content', 'repeater' ] ) ) {
+					continue;
+				}
+
+				if ( 'repeater' === $field['type'] ) {
+					foreach ( $field['sub_fields'] as $repeater_field ) {
+						if ( 'flexible_content' !== $repeater_field['type'] ) {
+							continue;
+						}
+
+						foreach ( $repeater_field['layouts'] as $layout_field ) {
+							if ( $keys [ $layout_field ] ) {
+								continue;
+							}
+							$keys[ $layout_field['key'] ] = $layout_field['name'];
+						}
+					}
+				} else if ( 'flexible_content' === $field['type'] ) {
 					// Flexible is recursive structure with sub_fields into layouts
 					foreach ( $field['layouts'] as $layout_field ) {
 						if ( $keys [ $layout_field ] ) {
