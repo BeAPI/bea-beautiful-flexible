@@ -52,7 +52,7 @@ To facilitate the process of submitting an issue and quicker answer, we only use
 
 == Installation ==
 
-This plugin works only if the [ACF Pro](https://www.advancedcustomfields.com/) is installed and activated.
+This plugin works only if the [ACF Pro](https://www.advancedcustomfields.com/) plugin is installed and activated.
 
 = Requirements =
 - WordPress 4.6+
