@@ -1,5 +1,5 @@
 === BEA - Beautiful Flexible ===
-Contributors: maximeculea
+Contributors: beapi, maximeculea
 Donate link: http://paypal.me/BeAPI
 Tags: Advanced Custom Fields, ACF, ACF Addon, Flexible
 Requires at least: 4.6
