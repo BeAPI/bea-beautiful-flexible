@@ -11,6 +11,7 @@ Please note:
 #### Version information
 
 * Plugin version : 
+* ACF version : 
 * PHP : 
 * WordPress : 
 
