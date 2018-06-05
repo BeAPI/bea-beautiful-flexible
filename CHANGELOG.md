@@ -1,5 +1,8 @@
 # Changelog ##
 
+## 1.0.2 - 5 Jun 2018
+* Push to wp.org.
+
 ## 1.0.1 - 22 May 2018
 * [#6](https://github.com/BeAPI/bea-beautiful-flexible/issues/6) : fix title display
 

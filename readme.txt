@@ -5,7 +5,7 @@ Tags: Advanced Custom Fields, ACF, ACF Addon, Flexible
 Requires at least: 4.6
 Requires php: 5.6
 Tested up to: 4.9.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: https://github.com/BeAPI/bea-beautiful-flexible/blob/master/LICENSE.md
 
@@ -71,6 +71,9 @@ This plugin works only if the [ACF Pro](https://www.advancedcustomfields.com/) p
 1. Show how BEA Beautiful Flexible improve the ACF's layouts dropdown.
 
 == Changelog ==
+
+= 1.0.2 - 5 Jun 2018 =
+- Push to wp.org.
 
 = 1.0.1 - 22 May 2018 =
 - [#6](https://github.com/BeAPI/bea-beautiful-flexible/issues/6) : fix title display
