@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: BEA - Beautiful Flexible
- Version: 1.0.2
+ Version: 1.0.3
  Plugin URI: https://github.com/BeAPI/bea-beautiful-flexible
  Description: Transform ACF's flexible layouts list into a nice and UX popup.
  Author: Be API Technical team
@@ -35,12 +35,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants
-define( 'BEA_BEAUTIFUL_FLEXIBLE_VERSION', '1.0.2' );
+define( 'BEA_BEAUTIFUL_FLEXIBLE_VERSION', '1.0.3' );
 define( 'BEA_BEAUTIFUL_FLEXIBLE_MIN_PHP_VERSION', '5.6' );
 
 // Plugin URL and PATH
 define( 'BEA_BEAUTIFUL_FLEXIBLE_URL', plugin_dir_url( __FILE__ ) );
 define( 'BEA_BEAUTIFUL_FLEXIBLE_DIR', plugin_dir_path( __FILE__ ) );
+define( 'BEA_ACF_OPTIONS_MAIN_FILE_DIR', __FILE__ );
 define( 'BEA_BEAUTIFUL_FLEXIBLE_PLUGIN_DIRNAME', basename( rtrim( dirname( __FILE__ ), '/' ) ) );
 
 // Check PHP min version
@@ -60,19 +61,8 @@ require_once BEA_BEAUTIFUL_FLEXIBLE_DIR . 'autoload.php';
 add_action( 'plugins_loaded', 'plugins_loaded_bea_beautiful_flexible_plugin' );
 /** Init the plugin */
 function plugins_loaded_bea_beautiful_flexible_plugin() {
-	// Check ACF is activated
-	if ( ! function_exists( 'acf' ) ) {
-		return;
-	}
-
-	// Get ACF
-	$acf = new acf();
-	if ( empty( $acf ) ) {
-		return;
-	}
-
-	// Check ACF's versions is 5.6+
-	if ( ! version_compare( $acf->version, '5.6.O', '>=' ) ) {
+	$requirements = \BEA\Beautiful_Flexible\Requirements::get_instance();
+	if ( ! $requirements->check_requirements() ) {
 		return;
 	}
 
