@@ -150,8 +150,13 @@ class Main {
 		return sprintf( '%sassets/default.png', BEA_BEAUTIFUL_FLEXIBLE_URL );
 	}
 
+	/**
+	 * Use default JS or for 5.7.0+ the 57 one
+	 * @since 1.0.3
+	 */
 	public function register_assets() {
-		wp_register_script( 'bea-beautiful-flexible', BEA_BEAUTIFUL_FLEXIBLE_URL . 'assets/js/bea-beautiful-flexible.min.js', [ 'jquery' ], BEA_BEAUTIFUL_FLEXIBLE_VERSION );
+		$version = version_compare( acf()->version, '5.7.O', '>=' ) ? '-57' : '';
+		wp_register_script( 'bea-beautiful-flexible', sprintf( '%sassets/js/bea-beautiful-flexible%s.min.js', BEA_BEAUTIFUL_FLEXIBLE_URL, $version ), [ 'jquery' ], BEA_BEAUTIFUL_FLEXIBLE_VERSION );
 		wp_register_style( 'bea-beautiful-flexible', BEA_BEAUTIFUL_FLEXIBLE_URL . 'assets/css/bea-beautiful-flexible.min.css', [], BEA_BEAUTIFUL_FLEXIBLE_VERSION );
 	}
 
