@@ -72,6 +72,11 @@ This plugin works only if the [ACF Pro](https://www.advancedcustomfields.com/) p
 
 == Changelog ==
 
+
+= 1.0.3 - 13 Aug 2018 =
+- FIX [#8](https://github.com/BeAPI/bea-beautiful-flexible/issues/8) : breaking changes with ACF 5.7.0 by adding new JS.
+- Refactor way requirements are loaded by adding dedicated class.
+
 = 1.0.2 - 5 Jun 2018 =
 - Push to wp.org.
 
