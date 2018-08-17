@@ -4,8 +4,8 @@ Donate link: http://paypal.me/BeAPI
 Tags: Advanced Custom Fields, ACF, ACF Addon, Flexible
 Requires at least: 4.6
 Requires php: 5.6
-Tested up to: 4.9.3
-Stable tag: 1.0.2
+Tested up to: 4.9.6
+Stable tag: 1.0.3
 License: GPLv3 or later
 License URI: https://github.com/BeAPI/bea-beautiful-flexible/blob/master/LICENSE.md
 
