@@ -41,8 +41,8 @@ Finally, you could filter all images like this :
 
 ## [Composer](http://composer.rarst.net/)
 
-- Add repository source : `{ "type": "vcs", "url": "https://github.com/BeAPI/bea-media-analytics" }`.
-- Include `"bea/bea-media-analytics": "dev-master"` in your composer file for last master's commits or a tag released.
+- Add repository source : `{ "type": "vcs", "url": "https://github.com/BeAPI/bea-beautiful-flexible" }`.
+- Include `"bea/bea-beautiful-flexible": "dev-master"` in your composer file for last master's commits or a tag released.
 - Then [add](#how-) your awesome layouts images.
 
 ## Contributing
