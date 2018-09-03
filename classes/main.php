@@ -31,7 +31,7 @@ class Main {
 		$css = "\n<style>";
 		$css .= "\n\t /** BEA - Beautiful Flexible : dynamic images */";
 		foreach ( $images as $layout_key => $image_url ) {
-			$css .= sprintf( "\n\t .acf-fc-popup ul li a[data-layout=%s]{ background-image: url(%s); }", $layout_key, $image_url );
+			$css .= sprintf( "\n\t .acf-fc-popup ul li a[data-layout=%s]{ background-image: url(\"%s\"); }", $layout_key, $image_url );
 		}
 		$css .= "\n</style>\n";
 
@@ -109,9 +109,9 @@ class Main {
 	}
 
 	/**
-	 * Locate template in the theme or plugin if needed
+	 * Locate image in the theme or plugin if needed
 	 *
-	 * @param string $tpl : the tpl name, add automatically .png at the end of the file
+	 * @param string $tpl : the tpl name, will look for jpg, jpeg, png or gif in that order
 	 *
 	 * @return bool|string
 	 */
@@ -135,16 +135,12 @@ class Main {
 		// Rework the tpl
 		$tpl = str_replace( '_', '-', $tpl );
 
-		if ( is_file( sprintf( '%s/%s.png', $path, $tpl ) ) ) {
-			return sprintf( '%s/%s.png', $path, $tpl );
-		}
-
-		if ( file_exists( sprintf( '%s/%s/%s.png', get_stylesheet_directory(), $path, $tpl ) ) ) {
-			return sprintf( '%s/%s/%s.png', get_stylesheet_directory_uri(), $path, $tpl );
-		}
-
-		if ( file_exists( sprintf( '%s/%s/%s.png', get_template_directory(), $path, $tpl ) ) ) {
-			return sprintf( '%s/%s/%s.png', get_template_directory_uri(), $path, $tpl );
+		foreach( ['jpg', 'jpeg', 'png', 'gif'] as $extension ) {
+			$image = sprintf('%s/%s.%s', $path, $tpl, $extension);
+			if( !is_file($image) && !is_file( get_theme_file_path($image) ) ) {
+				continue;
+			}
+			return get_theme_file_uri($image);
 		}
 
 		return sprintf( '%sassets/default.png', BEA_BEAUTIFUL_FLEXIBLE_URL );
