@@ -65,7 +65,7 @@ class Main {
 				if ( 'flexible_content' === $field['type'] ) {
 					// Flexible is recursive structure with sub_fields into layouts
 					foreach ( $field['layouts'] as $layout_field ) {
-						if ( $keys [ $layout_field ] ) {
+						if ( isset($keys [ $layout_field['key'] ]) && !empty($keys [ $layout_field['key'] ]) ) {
 							continue;
 						}
 						$keys[ $layout_field['key'] ] = $layout_field['name'];
