@@ -13,11 +13,13 @@ By default there is a "default" image for layouts. But the idea is to customize 
 ## Image convention
 
 * The size of image should be 366 x 150 or bigger 732 x 300.
-* They should be named based on the flexible key (`push_2_light`) with no underscores but dashes (`push-2-light.png`).
+* They should be named based on the flexible key (`push_2_light`) with no underscores but dashes (`push-2-light.[extension]`).
+* The following extensions will be resolved in that order: `.jpg`, `.jpeg`, `.png` and `.gif`.
 
 ## Where images should be situated
 
 They should more likely be situated into your theme `wp-content\themes\my-theme\assets\bea-beautiful-flexible\`. But if you have a child-theme and added images into it, these will overwrite those from parent-theme.
+The following directories will be solved according to order: plugin's folder, child theme's folder, theme's folder.
 
 Also note that you can filter this path to gather all your images into a same folder :
 
