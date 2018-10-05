@@ -1,5 +1,10 @@
 # Changelog ##
 
+#Future
+* Update readme with new requirements
+* #11 : add more filetype
+* #10 : fix warning
+
 ## 1.0.3 - 13 Aug 2018
 * FIX [#8](https://github.com/BeAPI/bea-beautiful-flexible/issues/8) : breaking changes with ACF 5.7.0 by adding new JS.
 * Refactor way requirements are loaded by adding dedicated class.

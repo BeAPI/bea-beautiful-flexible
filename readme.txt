@@ -2,7 +2,7 @@
 Contributors: beapi, maximeculea
 Donate link: http://paypal.me/BeAPI
 Tags: Advanced Custom Fields, ACF, ACF Addon, Flexible
-Requires at least: 4.6
+Requires at least: 4.7
 Requires php: 5.6
 Tested up to: 4.9.6
 Stable tag: 1.0.3
@@ -56,7 +56,8 @@ This plugin works only if the [ACF Pro](https://www.advancedcustomfields.com/) p
 
 # Requirements
 
-- WordPress 4.6+
+- [ACF Pro](https://www.advancedcustomfields.com/) plugin
+- WordPress 4.7+ because of `[get_theme_file_uri()](https://developer.wordpress.org/reference/functions/get_theme_file_uri)`
 - Tested up to 4.9.3.
 - PHP 5.6+
 

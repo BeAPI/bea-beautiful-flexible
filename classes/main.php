@@ -113,7 +113,9 @@ class Main {
 	 *
 	 * @param string $tpl : the tpl name, add automatically .png at the end of the file
 	 *
-	 * @return bool|string
+	 * @author Maxime CULEA | Nicolas Lemoine
+	 *
+	 * @return false|string
 	 */
 	public function locate_image( $tpl ) {
 		if ( empty( $tpl ) ) {
@@ -135,16 +137,11 @@ class Main {
 		// Rework the tpl
 		$tpl = str_replace( '_', '-', $tpl );
 
-		if ( is_file( sprintf( '%s/%s.png', $path, $tpl ) ) ) {
-			return sprintf( '%s/%s.png', $path, $tpl );
-		}
-
-		if ( file_exists( sprintf( '%s/%s/%s.png', get_stylesheet_directory(), $path, $tpl ) ) ) {
-			return sprintf( '%s/%s/%s.png', get_stylesheet_directory_uri(), $path, $tpl );
-		}
-
-		if ( file_exists( sprintf( '%s/%s/%s.png', get_template_directory(), $path, $tpl ) ) ) {
-			return sprintf( '%s/%s/%s.png', get_template_directory_uri(), $path, $tpl );
+		foreach ( [ 'jpg', 'jpeg', 'png', 'gif' ] as $extension ) {
+			$image = sprintf( '%s/%s.%s', $path, $tpl, $extension );
+			if ( is_file( $image ) && is_file( get_theme_file_path( $image ) ) ) {
+				return get_theme_file_uri( $image );
+			}
 		}
 
 		return sprintf( '%sassets/default.png', BEA_BEAUTIFUL_FLEXIBLE_URL );

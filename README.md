@@ -30,6 +30,7 @@ Finally, you could filter all images like this :
 # Requirements
 
 - [ACF Pro](https://www.advancedcustomfields.com/) plugin
+- WordPress 4.7+ because of `[get_theme_file_uri()](https://developer.wordpress.org/reference/functions/get_theme_file_uri)`
 
 # Installation
 
