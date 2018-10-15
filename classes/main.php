@@ -139,7 +139,12 @@ class Main {
 
 		foreach ( [ 'jpg', 'jpeg', 'png', 'gif' ] as $extension ) {
 			$image = sprintf( '%s/%s.%s', $path, $tpl, $extension );
-			if ( is_file( $image ) && is_file( get_theme_file_path( $image ) ) ) {
+			// Direct path to custom folder
+			if ( is_file( $image ) ) {
+				return $image;
+			}
+			// Partial path to check into themes
+			if ( is_file( get_theme_file_path( $image ) ) ) {
 				return get_theme_file_uri( $image );
 			}
 		}
