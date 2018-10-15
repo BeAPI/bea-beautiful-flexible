@@ -5,7 +5,7 @@ Tags: Advanced Custom Fields, ACF, ACF Addon, Flexible
 Requires at least: 4.7
 Requires php: 5.6
 Tested up to: 4.9.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv3 or later
 License URI: https://github.com/BeAPI/bea-beautiful-flexible/blob/master/LICENSE.md
 
@@ -75,6 +75,10 @@ This plugin works only if the [ACF Pro](https://www.advancedcustomfields.com/) p
 
 == Changelog ==
 
+= 1.0.4 - 15 Oct 2018 =
+- Update readme with new requirements
+- Feature [#11](https://github.com/BeAPI/bea-beautiful-flexible/issues/11) : add more filetype
+- FIX [#10](https://github.com/BeAPI/bea-beautiful-flexible/issues/10) : fix warning
 
 = 1.0.3 - 13 Aug 2018 =
 - FIX [#8](https://github.com/BeAPI/bea-beautiful-flexible/issues/8) : breaking changes with ACF 5.7.0 by adding new JS.

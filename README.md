@@ -60,7 +60,7 @@ If you identify any errors or have an idea for improving the plugin, feel free t
 
 ## Credits
 
-Special thanks to HWK, from his [blogpost](https://hwk.fr/blog/acf-transformer-la-selection-des-layouts-du-contenu-flexible-en-modal), we created a WordPress plugin with custom tuning (js+css).
+Special thanks to HWK, from his [blogpost](https://hwk.fr/blog/acf-transformer-la-selection-des-layouts-du-contenu-flexible-en-modal), we created a WordPress plugin with custom tunings (js+css).
 
 ## Creator
 
@@ -72,4 +72,4 @@ If you really like what we do or want to thank us for our quick work, feel free 
 
 ## License
 
-BEA - Media Analytics is licensed under the [GPLv3 or later](LICENSE.md).
+BEA - Beautiful Flexible is licensed under the [GPLv3 or later](LICENSE.md).

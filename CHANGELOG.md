@@ -1,6 +1,6 @@
 # Changelog ##
 
-#Future
+## 1.0.4 - 15 Oct 2018
 * Update readme with new requirements
 * #11 : add more filetype
 * #10 : fix warning
