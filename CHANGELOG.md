@@ -1,9 +1,12 @@
 # Changelog ##
 
 ## 1.0.4 - 15 Oct 2018
+* FIX [#10](https://github.com/BeAPI/bea-beautiful-flexible/issues/10) : fix warning
+
+## 1.0.4 - 15 Oct 2018
 * Update readme with new requirements
-* #11 : add more filetype
-* #10 : fix warning
+* FEATURE [#11](https://github.com/BeAPI/bea-beautiful-flexible/issues/11) : add more filetype
+* FIX [#10](https://github.com/BeAPI/bea-beautiful-flexible/issues/10) : fix warning
 
 ## 1.0.3 - 13 Aug 2018
 * FIX [#8](https://github.com/BeAPI/bea-beautiful-flexible/issues/8) : breaking changes with ACF 5.7.0 by adding new JS.
