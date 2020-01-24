@@ -29,14 +29,20 @@ class Requirements {
 	public function display_error( $message ) {
 		trigger_error( $message );
 
-		add_action( 'admin_notices', function () use ( $message ) {
-			printf( '<div class="notice error is-dismissible"><p>%s</p></div>', $message );
-		} );
+		add_action(
+			'admin_notices',
+			function () use ( $message ) {
+				printf( '<div class="notice error is-dismissible"><p>%s</p></div>', $message );
+			}
+		);
 
 		// Deactive self
-		add_action( 'admin_init', function () {
-			deactivate_plugins( BEA_ACF_OPTIONS_MAIN_FILE_DIR );
-			unset( $_GET['activate'] );
-		} );
+		add_action(
+			'admin_init',
+			function () {
+				deactivate_plugins( BEA_ACF_OPTIONS_MAIN_FILE_DIR );
+				unset( $_GET['activate'] );
+			}
+		);
 	}
 }

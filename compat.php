@@ -1,4 +1,5 @@
 <?php namespace BEA\Beautiful_Flexible;
+
 class Compatibility {
 	/**
 	 * admin_init hook callback
@@ -19,7 +20,7 @@ class Compatibility {
 		// Load the textdomain
 		load_plugin_textdomain( 'bea-beautiful-flexible', false, BEA_BEAUTIFUL_FLEXIBLE_PLUGIN_DIRNAME . '/languages' );
 
-		trigger_error( sprintf( __( 'Plugin Boilerplate requires PHP version %s or greater to be activated.', 'bea-beautiful-flexible' ), BEA_BEAUTIFUL_FLEXIBLE_MIN_PHP_VERSION ) );
+		trigger_error( sprintf( __( 'BEA - Beautiful Flexible requires PHP version %s or greater to be activated.', 'bea-beautiful-flexible' ), BEA_BEAUTIFUL_FLEXIBLE_MIN_PHP_VERSION ) );
 
 		// Deactive self
 		deactivate_plugins( BEA_BEAUTIFUL_FLEXIBLE_DIR . 'bea-beautiful-flexible.php' );
@@ -34,7 +35,7 @@ class Compatibility {
 	 */
 	public static function admin_notices() {
 		echo '<div class="notice error is-dismissible">';
-		echo '<p>' . esc_html( sprintf( __( 'Plugin Boilerplate require PHP version %s or greater to be activated. Your server is currently running PHP version %s.', 'bea-beautiful-flexible' ), BEA_BEAUTIFUL_FLEXIBLE_MIN_PHP_VERSION, PHP_VERSION ) ) . '</p>';
+		echo '<p>' . esc_html( sprintf( __( 'BEA - Beautiful Flexible require PHP version %1$s or greater to be activated. Your server is currently running PHP version %2$s.', 'bea-beautiful-flexible' ), BEA_BEAUTIFUL_FLEXIBLE_MIN_PHP_VERSION, PHP_VERSION ) ) . '</p>';
 		echo '</div>';
 	}
 }
