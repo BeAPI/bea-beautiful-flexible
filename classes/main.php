@@ -31,7 +31,7 @@ class Main {
 		$css = "\n<style>";
 		$css .= "\n\t /** BEA - Beautiful Flexible : dynamic images */";
 		foreach ( $images as $layout_key => $image_url ) {
-			$css .= sprintf( "\n\t .acf-fc-popup ul li a[data-layout=%s]{ background-image: url(\"%s\"); }", $layout_key, $image_url );
+			$css .= sprintf( "\n\t .acf-fc-popup ul li a[data-layout=\"%s\"]{ background-image: url(\"%s\"); }", $layout_key, $image_url );
 		}
 		$css .= "\n</style>\n";
 
