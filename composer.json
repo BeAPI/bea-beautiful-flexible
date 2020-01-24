@@ -23,7 +23,8 @@
 		"sensiolabs/security-checker": "^6.0",
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.6.0",
 		"squizlabs/php_codesniffer": "^3.5",
-		"wp-coding-standards/wpcs": "^2.2"
+		"wp-coding-standards/wpcs": "^2.2",
+		"phpro/grumphp": "^0.17.2"
 	},
 	"scripts": {
 		"coding-standards": [
