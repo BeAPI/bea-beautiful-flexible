@@ -11,13 +11,13 @@ class Requirements {
 	 */
 	public function check_requirements() {
 		if ( ! function_exists( 'acf' ) ) {
-			$this->display_error( __( 'Advanced Custom Fields is a required plugin.', 'bea-beautiful-flexible' ) );
+			$this->display_error( esc_html__( 'Advanced Custom Fields is a required plugin.', 'bea-beautiful-flexible' ) );
 
 			return false;
 		}
 
 		if ( '5.6.0' > acf()->version ) {
-			$this->display_error( __( 'Advanced Custom Fields should be on version 5.6.0 or above.', 'bea-beautiful-flexible' ) );
+			$this->display_error( esc_html__( 'Advanced Custom Fields should be on version 5.6.0 or above.', 'bea-beautiful-flexible' ) );
 
 			return false;
 		};
@@ -27,12 +27,12 @@ class Requirements {
 
 	// Display message and handle errors
 	public function display_error( $message ) {
-		trigger_error( $message );
+		trigger_error( $message ); // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 
 		add_action(
 			'admin_notices',
 			function () use ( $message ) {
-				printf( '<div class="notice error is-dismissible"><p>%s</p></div>', $message );
+				printf( '<div class="notice error is-dismissible"><p>%s</p></div>', $message ); // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		);
 
