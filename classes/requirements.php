@@ -16,11 +16,11 @@ class Requirements {
 			return false;
 		}
 
-		if ( '5.6.0' > acf()->version ) {
+		if ( compare_version( '5.6.0', acf()->version, '>' ) ) {
 			$this->display_error( esc_html__( 'Advanced Custom Fields should be on version 5.6.0 or above.', 'bea-beautiful-flexible' ) );
 
 			return false;
-		};
+		}
 
 		return true;
 	}
