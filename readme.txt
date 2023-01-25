@@ -58,7 +58,7 @@ This plugin works only if the [ACF Pro](https://www.advancedcustomfields.com/) p
 
 # Requirements
 
-- [ACF Pro](https://www.advancedcustomfields.com/) plugin 5.6+
+- [ACF Pro](https://www.advancedcustomfields.com/) 5.6+ plugin
 - WordPress 4.7+ because of `[get_theme_file_uri()](https://developer.wordpress.org/reference/functions/get_theme_file_uri)`
 - Tested up to 4.9.3.
 - PHP 5.6+
